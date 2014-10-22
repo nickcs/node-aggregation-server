@@ -18,5 +18,12 @@
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/nickcs/node-aggregation-server/issues"
+  },
+  "devDependencies": {
+    "chai": "~1.9.2",
+    "mocha": "~2.0.0",
+    "gulp-mocha": "~1.1.1",
+    "sinon": "~1.10.3",
+    "gulp": "~3.8.9"
   }
 }

@@ -1,15 +1,19 @@
 var request = require('request');
 var expect = require('chai').expect;
 
-var app = require('../server');
+var app = require('../index');
 
-var port = 3001;
+var freeport = require('freeport');
 
 describe('aggregration server', function(){
+
   describe('when the server is started', function() {
 
     before(function(done){
-      this.server = app.listen(port, done);
+      freeport(function(err,port){
+        this.uri = 'http://localhost:' + port;
+        this.server = app.listen(port, done);
+      }.bind(this));
     });
 
     after(function(){
@@ -17,7 +21,7 @@ describe('aggregration server', function(){
     });
 
     it('should respond with an okay', function(done) {
-        request('http://localhost:' + port, function (error, response, body) {
+        request(this.uri, function (error, response, body) {
           expect(error).to.not.exist;
           done();
         });

@@ -1,6 +1,7 @@
 express = require 'express'
 request = require 'request'
 async = require 'async'
+config = require 'config'
 
 app = express()
 
@@ -10,7 +11,8 @@ sendRequest = (url, cb) ->
 
 app.get '/', (req, res) ->
 
-  async.concat ['http://ip.jsontest.cm/','http://date.jsontest.com/'], sendRequest, (err, results) ->
+  async.concat config.urls, sendRequest, (err, results) ->
+    if err then console.log err
     res.send results
 
 module.exports = app

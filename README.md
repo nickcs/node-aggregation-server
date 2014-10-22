@@ -7,4 +7,4 @@ Node Aggregation Server for Node Training
 
 Initial architecture design
 
-![Achitecture drawing](doc/architecture.png)
+![Achitecture drawing](doc/architecture.jpg)

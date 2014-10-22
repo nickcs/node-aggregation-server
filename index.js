@@ -1,15 +1,20 @@
-var express = require('express')
-var app = express()
+var express = require('express');
 
-app.get('/', function (req, res) {
-  res.send('Hello World!')
-});
+module.exports.start = function() {
+  var app = express();
 
-var server = app.listen(3000, function () {
+  app.get('/', function (req, res) {
+    res.send('Hello World!')
+  });
 
-  var host = server.address().address
-  var port = server.address().port
+  var server = app.listen(3000, function () {
 
-  console.log('Example app listening at http://%s:%s', host, port)
+    var host = server.address().address
+    var port = server.address().port
 
-});
+    console.log('Example app listening at http://%s:%s', host, port)
+
+  });
+
+  return server;
+}

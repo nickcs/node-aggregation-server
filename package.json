@@ -1,0 +1,22 @@
+{
+  "name": "node-aggregation-server",
+  "version": "0.0.1",
+  "description": "Node aggregration server for node training",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://nickcs@github.com/nickcs/node-aggregation-server.git"
+  },
+  "keywords": [
+    "node",
+    "training"
+  ],
+  "author": "Nick Nance & Antonio Kaplan",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/nickcs/node-aggregation-server/issues"
+  }
+}

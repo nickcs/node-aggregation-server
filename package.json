@@ -24,6 +24,7 @@
     "url": "https://github.com/nickcs/node-aggregation-server/issues"
   },
   "dependencies": {
+    "lodash": "^2.4.1",
     "express": "~4.9.8"
   },
   "devDependencies": {
@@ -38,7 +39,6 @@
     "gulp-run-sequence": "^0.3.2",
     "gulp-sourcemaps": "^1.2.4",
     "gulp-util": "^3.0.1",
-    "lodash": "^2.4.1",
     "mocha": "^2.0.0",
     "run-sequence": "^1.0.1",
     "gulp-mocha": "~1.1.1",

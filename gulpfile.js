@@ -15,7 +15,7 @@ var target = './dist';
 var sources = {
   coffee: [
     {
-      src: './app.coffee',
+      src: './*.coffee',
       target: target + '/'
     },
     {
@@ -43,7 +43,7 @@ var sources = {
 gulp.task('develop', function () {
   livereload.listen();
   nodemon({
-    script: 'bin/www'
+    script: 'dist/server'
             //ext: 'js jade',
   }).on('restart', function () {
     setTimeout(function () {
@@ -93,7 +93,7 @@ gulp.task('coffee', function () {
  */
 gulp.task('watch', function () {
   gulp.watch(['./public/**/*.*'], ['src']);
-  gulp.watch(['./routes/**/*.coffee','./public/components/**/*.coffee','./app.coffee'], ['lint', 'coffee']);
+  gulp.watch(['./routes/**/*.coffee','./public/components/**/*.coffee','./*.coffee'], ['lint', 'coffee']);
 });
 
 /**

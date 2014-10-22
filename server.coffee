@@ -1,6 +1,7 @@
 app = require './index'
+config = require 'config'
 
-server = app.listen 3000, ->
+server = app.listen config.port, ->
 
   host = server.address().address
   port = server.address().port

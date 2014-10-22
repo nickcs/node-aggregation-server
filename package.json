@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "start": "node ./dist/server"
   },
   "dependencies": {
     "coffee-script": "^1.8.0",

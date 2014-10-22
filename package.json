@@ -26,5 +26,8 @@
     "sinon": "~1.10.3",
     "gulp": "~3.8.9",
     "request": "~2.45.0"
+  },
+  "dependencies": {
+    "express": "~4.9.8"
   }
 }

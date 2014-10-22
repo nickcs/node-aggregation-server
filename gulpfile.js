@@ -8,6 +8,7 @@ var gulp = require('gulp'),
         clean = require('gulp-clean'),
         runSequence = require('run-sequence'),
         _ = require('lodash'),
+        mocha = require('gulp-mocha'),
         livereload = require('gulp-livereload');
 
 var target = './dist';
@@ -35,6 +36,12 @@ var sources = {
     {
       src: './views/**/*.jade',
       target: target + '/views'
+    }
+  ],
+  tests: [
+    {
+      src: './test/**/*.coffee',
+      target: './test/'
     }
   ]
 };
@@ -115,3 +122,15 @@ gulp.task('build', function () {
  * defualt `gulp`
  */
 gulp.task('default', ['build', 'watch', 'develop']);
+
+
+gulp.task('test', function() {
+  require('coffee-script/register');
+  _.each(sources.tests, function(path){
+    gulp.src(path.src, {read: false})
+      .pipe(mocha({
+          reporter: 'spec'
+      }
+      ));
+  });
+});

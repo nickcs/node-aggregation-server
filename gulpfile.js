@@ -20,8 +20,8 @@ var sources = {
       target: target + '/'
     },
     {
-      src: './public/components/**/*.coffee',
-      target: target + '/public/components/'
+      src: './plugins/**/*.coffee',
+      target: target + '/plugins/'
     },
     {
       src: './routes/**/*.coffee',
@@ -32,10 +32,6 @@ var sources = {
     {
       src: './public/**/*.*',
       target: target + '/public'
-    },
-    {
-      src: './views/**/*.jade',
-      target: target + '/views'
     }
   ],
   tests: [
@@ -49,7 +45,7 @@ var sources = {
 
 gulp.task('develop', function () {
   process.env.NODE_ENV = 'develop';
-  
+
   livereload.listen();
   nodemon({
     script: 'dist/server'
@@ -102,7 +98,7 @@ gulp.task('coffee', function () {
  */
 gulp.task('watch', function () {
   gulp.watch(['./public/**/*.*'], ['src']);
-  gulp.watch(['./routes/**/*.coffee','./public/components/**/*.coffee','./*.coffee'], ['lint', 'coffee']);
+  gulp.watch(['./routes/**/*.coffee','./plugins/**/*.coffee','./*.coffee'], ['lint', 'coffee']);
 });
 
 /**
@@ -123,7 +119,7 @@ gulp.task('build', function () {
 /**
  * defualt `gulp`
  */
-gulp.task('default', ['build', 'watch', 'develop']);
+gulp.task('default', ['build', 'watch']);
 
 
 gulp.task('test', function() {

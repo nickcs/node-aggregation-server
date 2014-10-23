@@ -8,7 +8,7 @@ sendRequest = (url, cb) ->
 
 concatDownStreams = (req, res) ->
   async.concat config.urls, sendRequest, (err, results) ->
-    if err then console.log err
+    if err then logger.error "Base: URL request - ", err
     res.send results
 
 module.exports.concatDownStreams = concatDownStreams

@@ -23,6 +23,7 @@
     "gulp-sourcemaps": "^1.2.4",
     "gulp-util": "^3.0.1",
     "lodash": "^2.4.1",
+    "redis": "^0.12.1",
     "request": "~2.45.0",
     "run-sequence": "^1.0.1",
     "winston": "^0.8.1"

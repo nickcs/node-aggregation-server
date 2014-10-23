@@ -21,3 +21,10 @@ describe 'aggregration server', ->
         request @uri, (error, response, body) ->
           expect(error).to.not.exist
           done()
+
+    describe 'requesting requirements', ->
+
+      it 'should respond with a text body', (done) ->
+        request @uri + '/register', (error, response, body) ->
+          expect(body).length.gt(1000)
+          done()

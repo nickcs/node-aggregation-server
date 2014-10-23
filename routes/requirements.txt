@@ -1,5 +1,6 @@
 In order to register your end point with the application
-aggregator you must post a JSON block with the following information
+aggregator you must post to this enpoint with a JSON block
+with the following information
 
 {
   teamId: [integer],

@@ -1,5 +1,6 @@
 app = require './index'
 config = require 'config'
+logger = require './logger'
 
 server = app.listen process.env.PORT || config.port, ->
 

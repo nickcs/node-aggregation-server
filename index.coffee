@@ -2,6 +2,7 @@ express = require 'express'
 config = require 'config'
 baseRoute = require './routes/base'
 registrationRoute = require './routes/registration'
+logger = require './logger'
 
 app = express()
 

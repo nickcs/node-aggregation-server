@@ -48,6 +48,8 @@ var sources = {
 
 
 gulp.task('develop', function () {
+  process.env.NODE_ENV = 'develop';
+  
   livereload.listen();
   nodemon({
     script: 'dist/server'

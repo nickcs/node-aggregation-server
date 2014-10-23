@@ -1,4 +1,4 @@
 {
-  "port": 3000,
+  "port": 80,
   "urls": ["http://ip.jsontest.com/","http://date.jsontest.com/"]
 }

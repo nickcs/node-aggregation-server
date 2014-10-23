@@ -26,7 +26,9 @@
     "run-sequence": "^1.0.1",
     "winston": "^0.8.1",
     "hapi": "~7.1.0",
-    "good": "~3.1.0"
+    "good": "~3.1.0",
+    "joi": "~4.7.0",
+    "lout": "~5.1.1"
   },
   "keywords": [
     "node",

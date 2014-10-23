@@ -1,5 +1,6 @@
+fs = require('fs')
 
 getRequirements = (req, res) ->
-  res.send 'requirements'
+  fs.createReadStream('routes/requirements.txt').pipe(res)
 
 module.exports.getRequirements = getRequirements

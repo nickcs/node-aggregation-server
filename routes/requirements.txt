@@ -1,0 +1,14 @@
+In order to register your end point with the application
+aggregator you must post a JSON block with the following information
+
+{
+  teamId: [integer],
+  endPoint: [string],
+  action: ['POST', 'GET'],
+  contentType: ['multipart/form-data', 'application/json'],
+  requiredParams: {
+    "key name": ['text', '?', 'url']
+  }
+}
+
+Where the [] defines an expected type or available options.

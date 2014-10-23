@@ -3,8 +3,6 @@ expect = require('chai').expect
 
 app = require '../index'
 
-freeport = require 'freeport'
-
 describe 'aggregration server', ->
 
   describe 'when the server is started', ->
@@ -19,7 +17,7 @@ describe 'aggregration server', ->
 
     it 'should respond with an okay', (done) ->
         request @server.info.uri, (error, response, body) ->
-          expect(error).to.not.exist
+          expect(response.statusCode).to.equal(200)
           done()
 
     describe 'requesting requirements', ->

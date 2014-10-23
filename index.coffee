@@ -1,5 +1,4 @@
 config = require 'config'
-logger = require './logger'
 
 Hapi = require 'hapi'
 Good = require 'good'
@@ -9,8 +8,6 @@ root = require './plugins/root'
 registration = require './plugins/registration'
 
 server = new Hapi.Server 'localhost', process.env.PORT || config.port
-
-logger.info 'App Started - listening at ', server.info.uri
 
 module.exports.startServer = (cb) ->
 

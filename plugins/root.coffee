@@ -12,7 +12,8 @@ exports.register = (plugin, options, next) ->
     path: '/'
     handler: (request, reply) ->
       async.concat config.urls, _sendRequest, (err, results) ->
-        if err then logger.error "Base: URL request - ", err
+        if err
+          plugin.log ['error'], 'Base: URL request - ' + err
         reply(results)
 
   next()

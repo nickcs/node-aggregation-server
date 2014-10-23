@@ -26,5 +26,5 @@ describe 'aggregration server', ->
 
       it 'should respond with a text body', (done) ->
         request @uri + '/register', (error, response, body) ->
-          expect(body).length.gt(1000)
+          expect(body).length.gt(100)
           done()

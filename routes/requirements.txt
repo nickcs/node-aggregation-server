@@ -5,7 +5,7 @@ with the following information
 {
   teamId: [integer],
   endPoint: [string],
-  action: ['POST', 'GET'],
+  method: ['POST', 'GET'],
   contentType: ['multipart/form-data', 'application/json'],
   requiredParams: {
     "key name": ['text', '?', 'url']

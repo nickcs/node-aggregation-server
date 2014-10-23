@@ -1,7 +1,7 @@
 request = require 'request'
 expect = require('chai').expect
 
-app = require '../index'
+app = require '../server'
 
 freeport = require 'freeport'
 

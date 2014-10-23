@@ -1,9 +1,6 @@
-express = require 'express'
 request = require 'request'
 async = require 'async'
 config = require 'config'
-
-app = express()
 
 sendRequest = (url, cb) ->
   request url, (err, res, body) ->

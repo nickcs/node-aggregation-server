@@ -8,6 +8,10 @@
     }, {
       "endPoint": "http://date.jsontest.com/",
       "method": "GET"
+    }, {
+      "endPoint": "https://cosokeyword.herokuapp.com/",
+      "method": "POST",
+      "contentType": "application/json"
     }
   ]
 }

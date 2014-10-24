@@ -1,14 +1,22 @@
+fs = require 'fs'
 request = require 'request'
 async = require 'async'
 
 _sendRequest = (registration, cb) ->
 
-  request {
+  options =
     method: registration.method
     uri: registration.endPoint
-  },
-  (err, res, body) ->
-    cb null, body
+
+  fs.readFile 'lib/430pm.hum', (err, data) ->
+    if registration.contentType == 'application/json'
+      options.json = true
+      options.body =
+        method: 'glossary'
+        phrase: data.toString()
+
+    request options, (err, res, body) ->
+      cb null, body
 
 module.exports.aggregateRequests = (registrations, cb) ->
   async.concat registrations, _sendRequest, (err, results) ->

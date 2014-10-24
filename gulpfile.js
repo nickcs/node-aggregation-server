@@ -30,6 +30,10 @@ var sources = {
     {
       src: './lib/**/*.coffee',
       target: target + '/lib/'
+    },
+    {
+      src: './controller/**/*.coffee',
+      target: target + '/controller/'
     }
   ],
   static: [
@@ -104,7 +108,8 @@ gulp.task('build', function () {
  */
 gulp.task('watch',['livereload'], function () {
   gulp.watch(['./public/**/*.*'], ['src']);
-  gulp.watch(['./routes/**/*.coffee','./plugins/**/*.coffee','./*.coffee'], ['lint', 'coffee']);
+  // gulp.watch(['./routes/**/*.coffee','./plugins/**/*.coffee','./*.coffee'], ['lint', 'coffee']);
+  gulp.watch(_.pluck(sources.coffee, 'src'), ['lint', 'coffee']);
 });
 
 gulp.task('livereload', ['build'], function () {

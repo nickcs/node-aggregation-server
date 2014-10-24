@@ -18,7 +18,7 @@ _sendRequest = (registration, cb) ->
       else if params[key] == '?'
         params[key] = 'when was the world created'
       else if params[key] == 'url'
-        params[key] = 'https://cs-aggregator.herokuapp.com/callback'
+        params[key] = 'https://cs-aggregator.herokuapp.com/'
 
     if registration.contentType == 'application/json'
       options.json = true

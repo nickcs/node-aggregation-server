@@ -8,6 +8,12 @@ exports.register = (plugin, options, next) ->
       aggregation.aggregateRequests options.registrations, (err, results) ->
         reply(results)
 
+  plugin.route
+    method: 'POST'
+    path: '/'
+    handler: (request, reply) ->
+      console.log request.payload
+      reply()
   next()
 
 exports.register.attributes =

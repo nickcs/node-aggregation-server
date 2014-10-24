@@ -38,6 +38,14 @@
       "requiredParams": {
         "q": "substack"
       }
+    }, {
+      "endPoint": "https://calm-castle-3147.herokuapp.com/search/",
+      "method": "POST",
+      "contentType": "application/x-www-form-urlencoded",
+      "requiredParams": {
+        "query": "?",
+        "webhook": "url" 
+      }
     }
   ]
 }

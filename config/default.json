@@ -2,21 +2,6 @@
   "port": 3000,
   "registrations": [
     {
-      "endPoint": "http://ip.jsontest.com/",
-      "method": "GET"
-
-    }, {
-      "endPoint": "http://date.jsontest.com/",
-      "method": "GET"
-    }, {
-      "endPoint": "https://cosokeyword.herokuapp.com/",
-      "method": "POST",
-      "contentType": "application/json",
-      "requiredParams": {
-        "method": "glossary",
-        "phrase": "text"
-      }
-    }, {
       "endPoint": "https://cosokeyword.herokuapp.com/",
       "method": "POST",
       "contentType": "application/json",
@@ -39,12 +24,15 @@
         "q": "substack"
       }
     }, {
-      "endPoint": "https://calm-castle-3147.herokuapp.com/search/",
+      "endPoint": "https://still-savannah-1225.herokuapp.com/uptime",
+      "method": "GET"
+    }, {
+      "endPoint": "https://guarded-ridge-4722.herokuapp.com/",
       "method": "POST",
-      "contentType": "application/x-www-form-urlencoded",
+      "contentType": "application/json",
       "requiredParams": {
         "query": "?",
-        "webhook": "url" 
+        "webhook": "url"
       }
     }
   ]

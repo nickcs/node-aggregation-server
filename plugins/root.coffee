@@ -6,7 +6,7 @@ exports.register = (plugin, options, next) ->
     path: '/'
     handler: (request, reply) ->
       aggregation.aggregateRequests options.registrations, (err, results) ->
-        reply(results)
+        reply results
 
   plugin.route
     method: 'POST'

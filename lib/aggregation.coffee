@@ -27,7 +27,11 @@ _sendRequest = (registration, cb) ->
       options.form = params
 
     request options, (err, res, body) ->
-      cb null, body
+      cb null, {
+        endPoint: registration.endPoint
+        request: params
+        results: body
+      }
 
 module.exports.aggregateRequests = (registrations, cb) ->
   async.concat registrations, _sendRequest, (err, results) ->

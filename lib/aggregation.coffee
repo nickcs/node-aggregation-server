@@ -8,7 +8,6 @@ _sendRequest = (registration, cb) ->
   options =
     method: registration.method
     uri: registration.endPoint
-    json: registration.contentType == 'application/json'
 
   fs.readFile 'lib/430pm.hum', (err, text) ->
     params = registration.requiredParams
@@ -21,8 +20,11 @@ _sendRequest = (registration, cb) ->
       else if params[key] == 'url'
         params[key] = 'https://cs-aggregator.herokuapp.com/callback'
 
-    if options.json
+    if registration.contentType == 'application/json'
+      options.json = true
       options.body = params
+    else
+      options.form = params
 
     request options, (err, res, body) ->
       cb null, body

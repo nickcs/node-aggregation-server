@@ -16,7 +16,28 @@
         "method": "glossary",
         "phrase": "text"
       }
-
+    }, {
+      "endPoint": "https://cosokeyword.herokuapp.com/",
+      "method": "POST",
+      "contentType": "application/json",
+      "requiredParams": {
+        "method": "glossary",
+        "phrase": "text"
+      }
+    }, {
+      "endPoint": "http://evening-chamber-3273.herokuapp.com/",
+      "method": "POST",
+      "contentType": "application/x-www-form-urlencoded",
+      "requiredParams": {
+        "body": "text"
+      }
+    }, {
+      "endPoint": "https://calm-castle-3147.herokuapp.com/search/",
+      "method": "POST",
+      "contentType": "application/x-www-form-urlencoded",
+      "requiredParams": {
+        "q": "substack"
+      }
     }
   ]
 }

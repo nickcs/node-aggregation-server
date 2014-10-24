@@ -11,7 +11,12 @@
     }, {
       "endPoint": "https://cosokeyword.herokuapp.com/",
       "method": "POST",
-      "contentType": "application/json"
+      "contentType": "application/json",
+      "requiredParams": {
+        "method": "glossary",
+        "phrase": "text"
+      }
+
     }
   ]
 }

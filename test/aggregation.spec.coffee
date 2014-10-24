@@ -26,6 +26,9 @@ describe 'aggregration lib', ->
       endPoint: 'http://ip.jsontest.com/'
       method: 'POST'
       contentType: 'application/json'
+      requiredParams:
+        method: "glossary"
+        phrase: "text"
     ], (err, results) ->
       expect(results.length).to.equal(1)
       done()

@@ -12,7 +12,7 @@ exports.register = (plugin, options, next) ->
     method: 'POST'
     path: '/'
     handler: (request, reply) ->
-      console.log request.payload.answers
+      console.log request.payload.question.answers
       reply()
   next()
 

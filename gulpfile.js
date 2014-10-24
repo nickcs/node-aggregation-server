@@ -43,19 +43,6 @@ var sources = {
 };
 
 
-gulp.task('develop', function () {
-  process.env.NODE_ENV = 'develop';
-
-  livereload.listen();
-  nodemon({
-    script: 'dist/server'
-            //ext: 'js jade',
-  }).on('restart', function () {
-    setTimeout(function () {
-      livereload.changed();
-    }, 500);
-  });
-});
 
 /**
  * Lint the files
@@ -83,7 +70,7 @@ gulp.task('src', function () {
  * AND add the app.js
  * AND mapp sourcefiles
  */
-gulp.task('coffee', function () {
+gulp.task('coffee',['lint'], function () {
 
   _.each(sources.coffee, function (path) {
     gulp.src(path.src)
@@ -93,13 +80,6 @@ gulp.task('coffee', function () {
 
 });
 
-/**
- * Watch for changes
- */
-gulp.task('watch', function () {
-  gulp.watch(['./public/**/*.*'], ['src']);
-  gulp.watch(['./routes/**/*.coffee','./plugins/**/*.coffee','./*.coffee'], ['lint', 'coffee']);
-});
 
 /**
  * Clean the dist folder
@@ -112,14 +92,30 @@ gulp.task('clean', function () {
  * Create the build task sequence chain
  */
 gulp.task('build', function () {
-  runSequence('clean', ['lint', 'src', 'coffee']);
+  runSequence('src', 'coffee');
 });
 
-
 /**
- * defualt `gulp`
+ * Watch for changes
  */
-gulp.task('default', ['build', 'watch']);
+gulp.task('watch',['livereload'], function () {
+  gulp.watch(['./public/**/*.*'], ['src']);
+  gulp.watch(['./routes/**/*.coffee','./plugins/**/*.coffee','./*.coffee'], ['lint', 'coffee']);
+});
+
+gulp.task('livereload', ['build'], function () {
+  process.env.NODE_ENV = 'develop';
+
+  livereload.listen();
+  nodemon({
+    script: './dist/server'
+            //ext: 'js jade',
+  }).on('restart', function () {
+    setTimeout(function () {
+      livereload.changed();
+    }, 500);
+  });
+});
 
 
 gulp.task('test', function() {
@@ -131,4 +127,12 @@ gulp.task('test', function() {
       }
       ));
   });
+});
+
+
+/**
+ * defualt `gulp`
+ */
+gulp.task('default', ['watch'],function(){
+
 });

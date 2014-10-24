@@ -17,7 +17,7 @@
         "body": "text"
       }
     }, {
-      "endPoint": "https://calm-castle-3147.herokuapp.com/search/",
+      "endPoint": "https://soundstream.herokuapp.com/search/",
       "method": "POST",
       "contentType": "application/x-www-form-urlencoded",
       "requiredParams": {

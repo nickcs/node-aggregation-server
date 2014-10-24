@@ -1,4 +1,13 @@
 {
   "port": 3000,
-  "urls": ["http://ip.jsontest.com/","http://date.jsontest.com/"]
+  "registrations": [
+    {
+      "endPoint": "http://ip.jsontest.com/",
+      "method": "GET"
+
+    }, {
+      "endPoint": "http://date.jsontest.com/",
+      "method": "GET"
+    }
+  ]
 }

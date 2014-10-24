@@ -1,19 +1,11 @@
-request = require 'request'
-async = require 'async'
-config = require 'config'
-
-_sendRequest = (url, cb) ->
-  request url, (err, res, body) ->
-    cb null, body
+aggregation = require '../lib/aggregation'
 
 exports.register = (plugin, options, next) ->
   plugin.route
     method: 'GET'
     path: '/'
     handler: (request, reply) ->
-      async.concat config.urls, _sendRequest, (err, results) ->
-        if err
-          plugin.log ['error'], 'Base: URL request - ' + err
+      aggregation.aggregateRequests options.registrations, (err, results) ->
         reply(results)
 
   next()

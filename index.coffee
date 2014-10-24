@@ -14,7 +14,11 @@ module.exports.startServer = (cb) ->
   server.pack.register [
       {plugin: Good}
       {plugin: Lout}
-      {plugin: root}
+      {
+        plugin: root
+        options:
+          registrations: config.registrations
+      }
       {plugin: registration}
     ],
     (err) ->

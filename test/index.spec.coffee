@@ -16,9 +16,9 @@ describe 'aggregration server', ->
       @server.stop(done)
 
     it 'should respond with an okay', (done) ->
-        request @server.info.uri, (error, response, body) ->
-          expect(response.statusCode).to.equal(200)
-          done()
+      request @server.info.uri, (error, response, body) ->
+        expect(response.statusCode).to.equal(200)
+        done()
 
     describe 'requesting documentation', ->
 

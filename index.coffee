@@ -7,8 +7,7 @@ Lout = require 'lout'
 root = require './plugins/root'
 registration = require './plugins/registration'
 
-console.log('env port is ' + process.env.PORT);
-server = new Hapi.Server 'localhost', process.env.PORT || config.port
+server = new Hapi.Server '0.0.0.0', process.env.PORT || config.port
 
 module.exports.startServer = (cb) ->
 

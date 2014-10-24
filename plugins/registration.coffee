@@ -1,11 +1,18 @@
-exports.register = (plugin, options, next) ->
-  plugin.route
-    method: 'GET'
-    path: '/register'
-    handler: (request, reply) ->
-      reply.file('plugins/requirements.txt')
+fs = require 'fs'
+strHtml = require '../lib/str-html'
 
-  next()
+exports.register = (plugin, options, next) ->
+
+  fs.readFile 'plugins/requirements.txt', (err, data) ->
+    plugin.route
+      method: 'POST'
+      path: '/register'
+      config:
+        description: strHtml.strToHtml data.toString(0)
+      handler: (request, reply) ->
+        reply 'got it'
+
+    next()
 
 exports.register.attributes =
     name: 'registrationPlugin',

@@ -26,6 +26,10 @@ var sources = {
     {
       src: './routes/**/*.coffee',
       target: target + '/routes/'
+    },
+    {
+      src: './lib/**/*.coffee',
+      target: target + '/lib/'
     }
   ],
   static: [

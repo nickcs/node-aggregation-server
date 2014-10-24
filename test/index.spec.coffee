@@ -1,30 +1,28 @@
 request = require 'request'
 expect = require('chai').expect
 
-app = require '../server'
-
-freeport = require 'freeport'
+app = require '../index'
 
 describe 'aggregration server', ->
 
   describe 'when the server is started', ->
 
     before (done) ->
-      freeport (err,port) =>
-        @uri = 'http://localhost:' + port
-        @server = app.listen port, done
+      app.startServer (err,server) =>
+        @server = server
+        done()
 
-    after ->
-      @server.close()
+    after (done) ->
+      @server.stop(done)
 
     it 'should respond with an okay', (done) ->
-        request @uri, (error, response, body) ->
-          expect(error).to.not.exist
+        request @server.info.uri, (error, response, body) ->
+          expect(response.statusCode).to.equal(200)
           done()
 
     describe 'requesting requirements', ->
 
       it 'should respond with a text body', (done) ->
-        request @uri + '/register', (error, response, body) ->
+        request @server.info.uri + '/register', (error, response, body) ->
           expect(body).length.gt(100)
           done()

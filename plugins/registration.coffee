@@ -1,18 +1,17 @@
-fs = require 'fs'
-strHtml = require '../lib/str-html'
+registration = require "../controller/registration-controller"
 
 exports.register = (plugin, options, next) ->
+  plugin.route
+    method: 'GET'
+    path: '/registration'
+    config:
+      description: "Descriptor for the POST endpoint format"
+      handler: registration.readConfig
+      # handler: registration.readConfig request, reply, (err,data) ->
+      #   return next err if err
+      #   reply data
 
-  fs.readFile 'plugins/requirements.txt', (err, data) ->
-    plugin.route
-      method: 'POST'
-      path: '/register'
-      config:
-        description: strHtml.strToHtml data.toString(0)
-      handler: (request, reply) ->
-        reply 'got it'
-
-    next()
+  next()
 
 exports.register.attributes =
     name: 'registrationPlugin',

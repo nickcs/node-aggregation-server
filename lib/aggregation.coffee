@@ -16,7 +16,7 @@ _sendRequest = (registration, cb) ->
       if params[key] == 'text'
         params[key] = text.toString()
       else if params[key] == '?'
-        params[key] = 'when was the world created'
+        params[key] = 'when was the world created?'
       else if params[key] == 'url'
         params[key] = 'https://cs-aggregator.herokuapp.com/'
 

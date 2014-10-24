@@ -20,9 +20,9 @@ describe 'aggregration server', ->
           expect(response.statusCode).to.equal(200)
           done()
 
-    describe 'requesting requirements', ->
+    describe 'requesting documentation', ->
 
       it 'should respond with a text body', (done) ->
-        request @server.info.uri + '/register', (error, response, body) ->
+        request @server.info.uri + '/docs', (error, response, body) ->
           expect(body).length.gt(100)
           done()
